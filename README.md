@@ -48,6 +48,7 @@ It demonstrates how AI-inspired decision models, containerization, and cloud dep
 
 ## 🔄 System Flow Architecture
 
+```text
 Stadium Users (Browser / Client)
             │
             ▼
@@ -64,6 +65,7 @@ Google Cloud Run Deployment
             │
             ▼
 Public HTTPS Response
+```
 
 ---
 
@@ -97,6 +99,7 @@ This simulates intelligent decision-making used in real-world crowd management s
 
 ## 📂 Project Structure
 
+```text
 smart-stadium-ai/
 │
 ├── server.js
@@ -106,13 +109,27 @@ smart-stadium-ai/
 │
 └── public/
     └── index.html
+```
 
 ---
 
 ## 🔄 CI/CD (Conceptual Workflow)
 
-Developer Push → GitHub Repository → Docker Build → Google Cloud Run Deployment → Live Update
-
+```text
+Developer Push
+    │
+    ▼
+GitHub Repository
+    │
+    ▼
+Docker Build
+    │
+    ▼
+Google Cloud Run Deployment
+    │
+    ▼
+Live Application Update
+```
 ---
 
 ## 📈 Impact
