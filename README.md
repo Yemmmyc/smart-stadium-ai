@@ -33,29 +33,30 @@ The system uses an AI-agent-inspired design (prompt-based logic) to simulate int
 - Version Control: Git & GitHub
 - AI Layer: Prompt-based agent simulation logic
 
-            ┌─────────────────────┐
-            │   Stadium Users     │
-            │ (Browser / Client)  │
-            └─────────┬───────────┘
-                      │
-                      ▼
-        ┌──────────────────────────┐
-        │  Node.js Express App     │
-        │  (Smart Stadium AI)      │
-        └─────────┬───────────────┘
-                  │
-          AI Prompt Logic Engine
-                  │
-                  ▼
-        ┌──────────────────────────┐
-        │ Crowd Decision Output    │
-        │ (Routes / Suggestions)   │
-        └─────────┬───────────────┘
-                  │
-                  ▼
-     ┌──────────────────────────────┐
-     │  Google Cloud Run (Hosting)  │
-     └──────────────────────────────┘
+      ┌─────────────────────┐
+      │   Stadium Users     │
+      │ (Browser / Client)  │
+      └─────────┬───────────┘
+                │
+                ▼
+  ┌──────────────────────────┐
+  │  Node.js Express App     │
+  │  (Smart Stadium AI)      │
+  └─────────┬───────────────┘
+                │
+        AI Prompt Logic Engine
+                │
+                ▼
+  ┌──────────────────────────┐
+  │ Crowd Decision Output    │
+  │ (Routes / Suggestions)   │
+  └─────────┬───────────────┘
+                │
+                ▼
+  ┌──────────────────────────┐
+  │ Google Cloud Run         │
+  │ (Deployment Platform)    │
+  └──────────────────────────┘
 
 
 
