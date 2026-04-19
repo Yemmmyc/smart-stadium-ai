@@ -33,6 +33,30 @@ The system uses an AI-agent-inspired design (prompt-based logic) to simulate int
 - Version Control: Git & GitHub
 - AI Layer: Prompt-based agent simulation logic
 
+            ┌─────────────────────┐
+            │   Stadium Users     │
+            │ (Browser / Client)  │
+            └─────────┬───────────┘
+                      │
+                      ▼
+        ┌──────────────────────────┐
+        │  Node.js Express App     │
+        │  (Smart Stadium AI)      │
+        └─────────┬───────────────┘
+                  │
+          AI Prompt Logic Engine
+                  │
+                  ▼
+        ┌──────────────────────────┐
+        │ Crowd Decision Output    │
+        │ (Routes / Suggestions)   │
+        └─────────┬───────────────┘
+                  │
+                  ▼
+     ┌──────────────────────────────┐
+     │  Google Cloud Run (Hosting)  │
+     └──────────────────────────────┘
+
 ---
 
 ## ⚙️ How It Works
@@ -83,6 +107,42 @@ smart-stadium-ai/
 
 ---
 
+## 🔄 CI/CD PIPELINE
+
+```
+┌─────────────────────┐
+│  Developer Pushes   │
+│  to GitHub Repo     │
+└─────────┬───────────┘
+          │
+          ▼
+┌──────────────────────────┐
+│ GitHub Actions Trigger   │
+│ (Builds Docker Image)    │
+└─────────┬───────────────┘
+          │
+          ▼
+┌──────────────────────────┐
+│ Google Cloud Build       │
+│ (Pushes to Artifact Reg) │
+└─────────┬───────────────┘
+          │
+          ▼
+┌──────────────────────────┐
+│ Google Cloud Run         │
+│ (Deploys New Version)    │
+└─────────┬───────────────┘
+          │
+          ▼
+┌──────────────────────────┐
+│ Live App Updated         │
+│ (Zero Downtime)          │
+└──────────────────────────┘
+```
+
+---
+
+
 ## 🧑‍💻 Tech Stack
 - Node.js
 - Express.js
@@ -97,6 +157,11 @@ This project demonstrates how AI agent systems can be applied to real-world envi
 - Safety
 - Efficiency
 - User experience
+
+---
+
+## CI/CD Improvement (Future Enhancement)
+A GitHub Actions pipeline can be integrated to automate Docker builds and deployment to Google Cloud Run on every push.
 
 ---
 
