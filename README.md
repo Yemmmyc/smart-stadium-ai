@@ -103,6 +103,9 @@ GET /simulate?crowd=high
     "wait_time": "15+ mins"
   }
 }
+```
+
+---
 
 ## 🔄 CI/CD (Conceptual Workflow)
 
@@ -145,27 +148,17 @@ smart-stadium-ai/
 ```
 ---
 
-📸 Screenshots (REQUIRED FOR A+)
-1. Live Application
-Show browser with your app UI
+📸 Screenshots
+### 🌐 Live Application
+![Live App](screenshots/homepage.png)
 
-https://smart-stadium-ai-934712061771.us-central1.run.app/
+### ☁️ Cloud Run Service
+![Cloud Run](screenshots/cloud-run.png)
 
-![Live Application](screenshots/homepage.png)
-
-2. Cloud Run Service
-Show deployed service + URL
-
-![Cloud Run Service](screenshots/cloud-run.png)
-
-3. API Test
-Show /simulate?crowd=high in browser/Postman
-
+### 📊 API Test (/simulate?crowd=high)
 ![API Test](screenshots/simulate-api.png)
 
-4. AI Response
-Show AI response to inputs on the main page
-
+### 🤖 AI Response
 ![AI Response](screenshots/ai-response.png)
 
 ---
