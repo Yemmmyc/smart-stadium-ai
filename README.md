@@ -57,7 +57,7 @@ The system uses an AI-agent-inspired design (prompt-based logic) to simulate int
      │  Google Cloud Run (Hosting)  │
      └──────────────────────────────┘
 
----
+
 
 ## ⚙️ How It Works
 1. User interacts with the system (simulated stadium environment)
