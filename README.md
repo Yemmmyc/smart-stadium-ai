@@ -1,177 +1,138 @@
 # 🏟️ Smart Stadium AI Agent
 
-## 📌 Project Overview
-The Smart Stadium AI Agent is a cloud-deployed system designed to improve the physical event experience for attendees at large-scale sporting venues.  
+![Node.js](https://img.shields.io/badge/Node.js-Express-green)
+![Docker](https://img.shields.io/badge/Docker-Container-blue)
+![Google Cloud Run](https://img.shields.io/badge/GCP-Cloud%20Run-orange)
+![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-purple)
+![Status](https://img.shields.io/badge/Status-Live-brightgreen)
 
-It addresses common stadium challenges such as:
-- Crowd congestion at entry and exit points  
-- Long waiting times at facilities  
-- Lack of real-time coordination during events  
-
-The system uses an AI-agent-inspired design (prompt-based logic) to simulate intelligent decision-making for crowd movement optimization.
+> AI-powered cloud-native stadium crowd simulation system deployed with full DevOps pipeline.
 
 ---
 
-## 🚀 Live Demo
+## 🚀 Live Application
+
 👉 https://smart-stadium-ai-934712061771.us-central1.run.app
 
 ---
 
-## 🧠 Key Features
-- AI Agent logic for crowd flow analysis (prompt-based reasoning)
-- Real-time crowd movement simulation
-- Event experience optimization model
-- Cloud-based deployment for scalability
-- Lightweight Node.js backend system
+## 📌 Project Summary
+
+Smart Stadium AI Agent is a lightweight decision-support system designed to simulate intelligent routing logic for crowd movement in stadium environments.
+
+It demonstrates how AI-inspired decision models, containerization, and cloud deployment can be combined to solve real-world crowd management challenges such as congestion, delays, and inefficient movement flow.
 
 ---
 
-## 🏗️ Architecture
+## 🧠 Key Features
 
-**System Overview:**
+- AI-inspired rule-based decision engine
+- Crowd flow simulation logic
+- Real-time routing suggestion system (simulation)
+- Lightweight Node.js Express backend
+- Dockerized microservice architecture
+- Cloud-native deployment on Google Cloud Run
+- Public HTTPS endpoint
+
+---
+
+## 🏗️ System Architecture
+
+### Tech Stack
 - Backend: Node.js (Express)
 - Containerization: Docker
-- Deployment: Google Cloud Run
-- Version Control: Git & GitHub
-- AI Layer: Prompt-based agent simulation logic
+- Cloud Platform: Google Cloud Run
+- AI Layer: Rule-based agent logic
 
 ---
 
-## 📊 System Flow Diagram
+## 🔄 System Flow Architecture
 
-```text
-┌──────────────────────────────┐
-│       Stadium Users          │
-│   (Browser / Client)        │
-└─────────────┬────────────────┘
-              │
-              ▼
-┌──────────────────────────────┐
-│ Node.js Express App          │
-│ (Smart Stadium AI)           │
-└─────────────┬────────────────┘
-              │
-              ▼
-┌──────────────────────────────┐
-│ AI Prompt Logic Engine       │
-└─────────────┬────────────────┘
-              │
-              ▼
-┌──────────────────────────────┐
-│ Crowd Decision Output        │
-│ (Routes / Suggestions)       │
-└─────────────┬────────────────┘
-              │
-              ▼
-┌──────────────────────────────┐
-│ Google Cloud Run             │
-│ (Deployment Platform)        │
-└──────────────────────────────┘
+Stadium Users (Browser / Client)
+            │
+            ▼
+Node.js Express Application
+            │
+            ▼
+AI Decision Logic Layer
+            │
+            ▼
+Crowd Routing Output Engine
+            │
+            ▼
+Google Cloud Run Deployment
+            │
+            ▼
+Public HTTPS Response
 
 ---
 
 ## ⚙️ How It Works
-1. User interacts with the system (simulated stadium environment)
-2. AI Agent evaluates crowd conditions using predefined logic prompts
-3. System generates optimized movement or coordination suggestions
-4. Output is displayed in real-time response format
+
+1. User interacts with the system via browser
+2. Request is processed by Express backend
+3. AI logic evaluates crowd conditions using rules
+4. System generates routing suggestion
+5. Response is returned to user
 
 ---
 
-## 🤖 AI Agent Logic (MCP-style reasoning)
+## 🤖 AI Agent Logic
 
-This system simulates an AI agent using structured prompt-based reasoning to improve stadium crowd management.
-
-### Decision Flow:
-1. Receive crowd scenario input
-2. Analyze congestion level (high / medium / low)
-3. Apply predefined reasoning rules
-4. Output optimized movement recommendation
-
-### Example Rule:
 IF crowd_density > threshold  
-THEN suggest alternate exit routes
+THEN suggest alternative exit routes
 
-This mimics MCP-style decision pipelines used in intelligent systems for real-world coordination and decision-making.
+This simulates intelligent decision-making used in real-world crowd management systems.
 
 ---
 
-## ☁️ Deployment Steps (Summary)
-- Built Node.js application
+## ☁️ Deployment Overview
+
+- Node.js application built with Express
 - Containerized using Docker
-- Deployed to Google Cloud Run
-- Exposed via public HTTPS endpoint
+- Deployed on Google Cloud Run
+- Exposed via secure HTTPS endpoint
 
 ---
-
 
 ## 📂 Project Structure
-```
+
 smart-stadium-ai/
 │
 ├── server.js
 ├── package.json
 ├── Dockerfile
-├── public/
-│   └── index.html
-└── .gitignore
-```
+├── .gitignore
+│
+└── public/
+    └── index.html
 
+---
 
-## 🔄 CI/CD PIPELINE
+## 🔄 CI/CD (Conceptual Workflow)
 
-```
-┌─────────────────────┐
-│  Developer Pushes   │
-│  to GitHub Repo     │
-└─────────┬───────────┘
-          │
-          ▼
-┌──────────────────────────┐
-│ GitHub Actions Trigger   │
-│ (Builds Docker Image)    │
-└─────────┬───────────────┘
-          │
-          ▼
-┌──────────────────────────┐
-│ Google Cloud Build       │
-│ (Pushes to Artifact Reg) │
-└─────────┬───────────────┘
-          │
-          ▼
-┌──────────────────────────┐
-│ Google Cloud Run         │
-│ (Deploys New Version)    │
-└─────────┬───────────────┘
-          │
-          ▼
-┌──────────────────────────┐
-│ Live App Updated         │
-│ (Zero Downtime)          │
-└──────────────────────────┘
-```
-
-## 🧑‍💻 Tech Stack
-- Node.js
-- Express.js
-- Docker
-- Google Cloud Run
-- GitHub
+Developer Push → GitHub Repository → Docker Build → Google Cloud Run Deployment → Live Update
 
 ---
 
 ## 📈 Impact
-This project demonstrates how AI agent systems can be applied to real-world environments like stadiums to improve:
-- Safety
-- Efficiency
-- User experience
+
+- Demonstrates cloud-native architecture
+- Shows DevOps deployment pipeline understanding
+- Applies AI-inspired decision modeling
+- Simulates real-world crowd management systems
 
 ---
 
-## CI/CD Improvement (Future Enhancement)
-A GitHub Actions pipeline can be integrated to automate Docker builds and deployment to Google Cloud Run on every push.
+## 🚀 Future Improvements
+
+- Integrate real-time IoT crowd sensors
+- Replace rule-based logic with ML model
+- Fully automate CI/CD with GitHub Actions
+- Add monitoring dashboards (Grafana/Prometheus)
 
 ---
 
-## 📌 Author
-Built as part of a cloud + AI systems engineering project.
+## 🏁 Author
+
+Cloud + DevOps Engineering Project demonstrating end-to-end system design, containerization, and cloud deployment.
