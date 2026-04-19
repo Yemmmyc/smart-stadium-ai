@@ -104,6 +104,7 @@ This mimics MCP-style decision pipelines used in intelligent systems for real-wo
 
 ---
 
+
 ## 📂 Project Structure
 ```
 smart-stadium-ai/
@@ -116,7 +117,6 @@ smart-stadium-ai/
 └── .gitignore
 ```
 
----
 
 ## 🔄 CI/CD PIPELINE
 
@@ -150,9 +150,6 @@ smart-stadium-ai/
 │ (Zero Downtime)          │
 └──────────────────────────┘
 ```
-
----
-
 
 ## 🧑‍💻 Tech Stack
 - Node.js
