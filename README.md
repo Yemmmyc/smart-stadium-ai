@@ -6,7 +6,11 @@
 ![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-purple)
 ![Status](https://img.shields.io/badge/Status-Live-brightgreen)
 
-> AI-powered cloud-native stadium crowd simulation system deployed with full DevOps pipeline.
+
+## 📌 Overview
+Smart Stadium AI Agent is a cloud-native system designed to optimize crowd movement and enhance the event experience in large stadium environments.
+
+It simulates an AI-driven decision engine that analyzes crowd conditions and provides intelligent routing suggestions in real time.
 
 ---
 
@@ -16,33 +20,24 @@
 
 ---
 
-## 📌 Project Summary
-
-Smart Stadium AI Agent is a lightweight decision-support system designed to simulate intelligent routing logic for crowd movement in stadium environments.
-
-It demonstrates how AI-inspired decision models, containerization, and cloud deployment can be combined to solve real-world crowd management challenges such as congestion, delays, and inefficient movement flow.
-
----
-
-## 🧠 Key Features
-
-- AI-inspired rule-based decision engine
-- Crowd flow simulation logic
-- Real-time routing suggestion system (simulation)
-- Lightweight Node.js Express backend
-- Dockerized microservice architecture
-- Cloud-native deployment on Google Cloud Run
-- Public HTTPS endpoint
+## 🧠 Features
+- AI-inspired crowd decision engine
+- Real-time simulation endpoints
+- RESTful API architecture
+- Docker containerization
+- Automated CI/CD pipeline (Cloud Build → Cloud Run)
+- Scalable cloud deployment
 
 ---
 
-## 🏗️ System Architecture
+## 🏗️ Architecture
 
 ### Tech Stack
 - Backend: Node.js (Express)
 - Containerization: Docker
-- Cloud Platform: Google Cloud Run
-- AI Layer: Rule-based agent logic
+- CI/CD: Google Cloud Build
+- Deployment: Google Cloud Run
+- Version Control: GitHub
 
 ---
 
@@ -50,22 +45,128 @@ It demonstrates how AI-inspired decision models, containerization, and cloud dep
 
 ```text
 Stadium Users (Browser / Client)
-            │
-            ▼
+│
+▼
 Node.js Express Application
-            │
-            ▼
-AI Decision Logic Layer
-            │
-            ▼
-Crowd Routing Output Engine
-            │
-            ▼
-Google Cloud Run Deployment
-            │
-            ▼
-Public HTTPS Response
+│
+▼
+AI Decision Logic Engine
+│
+▼
+Crowd Routing Output
+│
+▼
+Google Cloud Run
+│
+▼
+Public HTTPS Endpoint
 ```
+
+---
+
+## ⚙️ API Endpoints
+
+### Health Check
+
+```text
+GET /health
+```
+
+
+### AI Query
+
+```text
+POST /ask
+Body:
+{
+"query": "Where should I enter?"
+}
+```
+### Simulation Endpoint
+
+```text
+GET /simulate?crowd=high
+```
+
+---
+
+## 📊 Example Response
+
+```json
+{
+  "success": true,
+  "crowd_level": "high",
+  "decision": {
+    "status": "Severe congestion detected",
+    "action": "Redirect to Gates B & C",
+    "priority": "CRITICAL",
+    "wait_time": "15+ mins"
+  }
+}
+
+## 🔄 CI/CD (Conceptual Workflow)
+
+```text
+Developer Push → GitHub Repository
+        │
+        ▼
+Cloud Build Trigger
+        │
+        ▼
+Docker Image Build & Push
+        │
+        ▼
+Cloud Run Deployment
+        │
+        ▼
+Live Application Update
+```
+---
+
+📂 Project Structure
+
+```text
+smart-stadium-ai/
+│
+├── server.js
+├── package.json
+├── Dockerfile
+├── cloudbuild.yaml
+├── .gitignore
+│
+├── public/
+│   └── index.html
+│
+└── screenshots/
+    ├── homepage.png
+    ├── ai-response.png
+    ├── simulate-api.png
+    └── cloud-run.png
+```
+---
+
+📸 Screenshots (REQUIRED FOR A+)
+1. Live Application
+Show browser with your app UI
+
+https://smart-stadium-ai-934712061771.us-central1.run.app/
+
+![Live Application](screenshots/homepage.png)
+
+2. Cloud Run Service
+Show deployed service + URL
+
+![Cloud Run Service](screenshots/cloud-run.png)
+
+3. API Test
+Show /simulate?crowd=high in browser/Postman
+
+![API Test](screenshots/simulate-api.png)
+
+4. AI Response
+Show AI response to inputs on the main page
+
+![AI Response](screenshots/ai-response.png)
 
 ---
 
@@ -97,47 +198,15 @@ This simulates intelligent decision-making used in real-world crowd management s
 
 ---
 
-## 📂 Project Structure
-
-```text
-smart-stadium-ai/
-│
-├── server.js
-├── package.json
-├── Dockerfile
-├── .gitignore
-│
-└── public/
-    └── index.html
-```
-
----
-
-## 🔄 CI/CD (Conceptual Workflow)
-
-```text
-Developer Push
-    │
-    ▼
-GitHub Repository
-    │
-    ▼
-Docker Build
-    │
-    ▼
-Google Cloud Run Deployment
-    │
-    ▼
-Live Application Update
-```
----
-
 ## 📈 Impact
 
 - Demonstrates cloud-native architecture
 - Shows DevOps deployment pipeline understanding
 - Applies AI-inspired decision modeling
 - Simulates real-world crowd management systems
+- Improves crowd safety and flow
+- Reduces congestion and wait times
+- Demonstrates real-world AI system design
 
 ---
 
@@ -147,7 +216,9 @@ Live Application Update
 - Replace rule-based logic with ML model
 - Fully automate CI/CD with GitHub Actions
 - Add monitoring dashboards (Grafana/Prometheus)
-
+- Machine learning-based predictions
+- Interactive dashboard visualization
+- WebSocket live updates
 ---
 
 ## 🏁 Author
