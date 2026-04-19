@@ -27,11 +27,17 @@ The system uses an AI-agent-inspired design (prompt-based logic) to simulate int
 ---
 
 ## 🏗️ Architecture
+
+**System Overview:**
 - Backend: Node.js (Express)
 - Containerization: Docker
 - Deployment: Google Cloud Run
 - Version Control: Git & GitHub
 - AI Layer: Prompt-based agent simulation logic
+
+---
+
+## 📊 System Flow Diagram
 
       ┌─────────────────────┐
       │   Stadium Users     │
@@ -58,7 +64,7 @@ The system uses an AI-agent-inspired design (prompt-based logic) to simulate int
   │ (Deployment Platform)    │
   └──────────────────────────┘
 
-
+---
 
 ## ⚙️ How It Works
 1. User interacts with the system (simulated stadium environment)
