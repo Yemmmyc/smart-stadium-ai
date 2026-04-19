@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Smart Stadium AI</title>
+</head>
+
+<body>
+    <h1>🏟️ Smart Stadium AI Agent</h1>
+
+    <input id="query" placeholder="Ask something..." />
+    <button onclick="ask()">Ask AI</button>
+
+    <p id="result"></p>
+
+    <script>
+        async function ask() {
+            const query = document.getElementById("query").value;
+
+            const res = await fetch("/ask", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ query })
+            });
+
+            const data = await res.json();
+            document.getElementById("result").innerText = data.response;
+        }
+    </script>
+</body>
+
+</html>
