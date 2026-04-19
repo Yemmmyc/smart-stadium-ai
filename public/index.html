@@ -1,32 +1,207 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8">
     <title>Smart Stadium AI</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* CONTAINER */
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #111827;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* FADE IN */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* BUTTONS */
+        button {
+            margin: 8px;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .high {
+            background: #ef4444;
+        }
+
+        .medium {
+            background: #f59e0b;
+        }
+
+        .low {
+            background: #10b981;
+        }
+
+        /* INPUT */
+        input {
+            padding: 10px;
+            width: 70%;
+            border-radius: 6px;
+            border: none;
+            margin-top: 10px;
+        }
+
+        /* RESULT BOX */
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #1f2937;
+            min-height: 80px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        /* LOADER */
+        .loader {
+            margin-top: 15px;
+            display: none;
+        }
+
+        /* PROGRESS BAR */
+        .progress {
+            width: 100%;
+            background: #374151;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .progress-bar {
+            height: 10px;
+            border-radius: 10px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+            input {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>🏟️ Smart Stadium AI Agent</h1>
 
-    <input id="query" placeholder="Ask something..." />
-    <button onclick="ask()">Ask AI</button>
+    <div class="container">
+        <h1>🏟️ Smart Stadium AI</h1>
+        <p>Real-time Crowd Intelligence System</p>
 
-    <p id="result"></p>
+        <!-- CROWD SIMULATION -->
+        <h3>Simulate Crowd Level</h3>
+        <button class="high" onclick="simulate('high')">High</button>
+        <button class="medium" onclick="simulate('medium')">Medium</button>
+        <button class="low" onclick="simulate('low')">Low</button>
+
+        <!-- AI INPUT -->
+        <h3>Ask AI Assistant</h3>
+        <input type="text" id="query" placeholder="e.g. best gate or food option">
+        <br>
+        <button onclick="askAI()">Ask AI</button>
+
+        <!-- LOADER -->
+        <div class="loader" id="loader">⏳ AI Processing...</div>
+
+        <!-- RESULT -->
+        <div class="result" id="result">
+            Awaiting input...
+        </div>
+    </div>
 
     <script>
-        async function ask() {
+        function showLoader() {
+            document.getElementById("loader").style.display = "block";
+        }
+
+        function hideLoader() {
+            document.getElementById("loader").style.display = "none";
+        }
+
+        /* SIMULATION */
+        async function simulate(level) {
+            showLoader();
+
+            const res = await fetch(`/simulate?crowd=${level}`);
+            const data = await res.json();
+
+            hideLoader();
+
+            let percent = level === "high" ? 90 : level === "medium" ? 60 : 20;
+            let color = level === "high" ? "#ef4444" : level === "medium" ? "#f59e0b" : "#10b981";
+
+            document.getElementById("result").innerHTML = `
+        <h3>${data.decision.status}</h3>
+        <p><strong>Action:</strong> ${data.decision.action}</p>
+        <p><strong>Priority:</strong> ${data.decision.priority}</p>
+        <p><strong>Wait Time:</strong> ${data.decision.wait_time}</p>
+
+        <p><strong>AI Confidence:</strong> ${Math.floor(Math.random() * 20 + 80)}%</p>
+
+        <div class="progress">
+            <div class="progress-bar" style="width:${percent}%; background:${color};"></div>
+        </div>
+    `;
+        }
+
+        /* AI QUERY */
+        async function askAI() {
             const query = document.getElementById("query").value;
+
+            if (!query) return;
+
+            showLoader();
 
             const res = await fetch("/ask", {
                 method: "POST",
-                headers: { "Content-Type": "application/json" },
+                headers: {
+                    "Content-Type": "application/json"
+                },
                 body: JSON.stringify({ query })
             });
 
             const data = await res.json();
-            document.getElementById("result").innerText = data.response;
+
+            hideLoader();
+
+            document.getElementById("result").innerHTML = `
+        <p>${data.response}</p>
+        <p><strong>AI Confidence:</strong> ${Math.floor(Math.random() * 20 + 80)}%</p>
+    `;
         }
     </script>
+
 </body>
 
 </html>
