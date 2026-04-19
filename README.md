@@ -39,30 +39,34 @@ The system uses an AI-agent-inspired design (prompt-based logic) to simulate int
 
 ## 📊 System Flow Diagram
 
-      ┌─────────────────────┐
-      │   Stadium Users     │
-      │ (Browser / Client)  │
-      └─────────┬───────────┘
-                │
-                ▼
-  ┌──────────────────────────┐
-  │  Node.js Express App     │
-  │  (Smart Stadium AI)      │
-  └─────────┬───────────────┘
-                │
-        AI Prompt Logic Engine
-                │
-                ▼
-  ┌──────────────────────────┐
-  │ Crowd Decision Output    │
-  │ (Routes / Suggestions)   │
-  └─────────┬───────────────┘
-                │
-                ▼
-  ┌──────────────────────────┐
-  │ Google Cloud Run         │
-  │ (Deployment Platform)    │
-  └──────────────────────────┘
+```text
+┌──────────────────────────────┐
+│       Stadium Users          │
+│   (Browser / Client)        │
+└─────────────┬────────────────┘
+              │
+              ▼
+┌──────────────────────────────┐
+│ Node.js Express App          │
+│ (Smart Stadium AI)           │
+└─────────────┬────────────────┘
+              │
+              ▼
+┌──────────────────────────────┐
+│ AI Prompt Logic Engine       │
+└─────────────┬────────────────┘
+              │
+              ▼
+┌──────────────────────────────┐
+│ Crowd Decision Output        │
+│ (Routes / Suggestions)       │
+└─────────────┬────────────────┘
+              │
+              ▼
+┌──────────────────────────────┐
+│ Google Cloud Run             │
+│ (Deployment Platform)        │
+└──────────────────────────────┘
 
 ---
 
