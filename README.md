@@ -43,13 +43,21 @@ The system uses an AI-agent-inspired design (prompt-based logic) to simulate int
 
 ---
 
-## 💡 AI Agent Design Concept
-Instead of a heavy ML model, this project uses a **prompt-driven AI agent approach**:
+## 🤖 AI Agent Logic (MCP-style reasoning)
 
-Example Prompt:
-> "Analyze crowd density at stadium exits and suggest optimal movement routes to reduce congestion."
+This system simulates an AI agent using structured prompt-based reasoning to improve stadium crowd management.
 
-This allows fast, scalable, and interpretable decision-making.
+### Decision Flow:
+1. Receive crowd scenario input
+2. Analyze congestion level (high / medium / low)
+3. Apply predefined reasoning rules
+4. Output optimized movement recommendation
+
+### Example Rule:
+IF crowd_density > threshold  
+THEN suggest alternate exit routes
+
+This mimics MCP-style decision pipelines used in intelligent systems for real-world coordination and decision-making.
 
 ---
 
