@@ -111,7 +111,7 @@ app.post("/ask", (req, res) => {
 // SIMULATION ENDPOINT
 app.get("/simulate", (req, res) => {
     try {
-        const crowd = req.query.crowd;
+        const crowd = (req.query.crowd || "").toLowerCase();
 
         if (!crowd) {
             return res.status(400).json({
